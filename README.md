@@ -29,3 +29,4 @@
 # 打开手机恶灵退散手游，打开神魂功能，连接数据线，usb 调试模式
 # 下载本脚本后运行 python eling.py
 # 等待其自动刷即可
+![image](https://github.com/zwxscience/elingtuisan_shenhunSCript/blob/master/example.png)
