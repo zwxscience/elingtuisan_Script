@@ -47,14 +47,14 @@ def beibao():
           % (519, 1625, 521, 1626) #519 1625 背包
     os.system(cmd)
     print(cmd)
-    time.sleep(random.uniform(1, 1.2))
+    time.sleep(random.uniform(2, 2.2))
     
 def suipian_combin():
     cmd = ('adb shell input swipe %i %i %i %i ' + str(press_time)) \
           % (129, 507, 131, 508) #129 507 第一个碎片
     os.system(cmd)
     print(cmd)
-    time.sleep(random.uniform(0.5, 0.6))
+    time.sleep(random.uniform(1, 1.2))
     for i in range(8):
         cmd = ('adb shell input swipe %i %i %i %i ' + str(press_time)) \
             % (523, 1324, 524, 1325) #523 1324 一键添加
@@ -65,17 +65,17 @@ def suipian_combin():
             % (534, 1327, 535, 1328) #534 1327 强化
         os.system(cmd)
         print(cmd)
-        time.sleep(random.uniform(0.2, 0.3))
+        time.sleep(random.uniform(0.5, 0.6))
     cmd = ('adb shell input swipe %i %i %i %i ' + str(press_time)) \
           % (1002, 564, 1003, 565) #1002 564 关掉小窗口
     os.system(cmd)
     print(cmd)
-    time.sleep(random.uniform(0.2, 0.3))   
+    time.sleep(random.uniform(0.5, 0.6))   
     cmd = ('adb shell input swipe %i %i %i %i ' + str(press_time)) \
           % (519, 1625, 519, 1626) #519 1625 裂魂
     os.system(cmd)
     print(cmd)
-    time.sleep(1)      
+    time.sleep(2)      
     
 # 循环直到游戏失败结束
 for i in range(100000):
