@@ -30,6 +30,12 @@
 
 # 方法步骤
 # 打开手机恶灵退散手游，打开神魂功能，连接数据线，usb 调试模式
-# 下载本脚本后运行 python eling_shenhun.py
+# 下载本脚本后运行 
+## 自动刷神魂
+`python eling_shenhun.py`
+## 自动封印（目前小米Note2 测试 命令执行响应没有达到理想的状态，所以只能当个辅助）
+`python eling_fengyin.py`
+## 自动挑战以及挑逗封印娘的功能
+`python eling_normal.py`
 # 等待其自动刷即可
 ![image](https://github.com/zwxscience/elingtuisan_shenhunSCript/blob/master/example.png)
