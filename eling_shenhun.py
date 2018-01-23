@@ -18,6 +18,9 @@ def get_screenshot(id):
 
 #需要将一个橙色或者紫色神魂放到背包格子的第一位
 #以下是1920×1080 分辨率的手机坐标，其他手机分辨率请自行适配
+#1066 798 功能选择
+#239 515 猎魂
+#882 1057 封印
 #455,970 祈福十次
 #519 1242 确定
 #519 1625 背包
@@ -29,7 +32,16 @@ def get_screenshot(id):
 #1002 564 关掉小窗口
 #519 1625 裂魂 
 # 祈福十次 循环
-     
+def prepare_game():
+    cmd = ('adb shell input tap %i %i' % (1066, 798)) #1066 798 功能选择
+    os.system(cmd)
+    print(cmd)
+    time.sleep(3)
+    cmd = ('adb shell input tap %i %i' % (239, 515)) #239 515 猎魂
+    os.system(cmd)
+    print(cmd)
+    time.sleep(3)
+    
 def lvye_shenshe():
     for i in range(15):
         cmd = ('adb shell input swipe %i %i %i %i ' + str(press_time)) \
@@ -78,10 +90,11 @@ def suipian_combin():
     time.sleep(2)      
     
 # 循环直到游戏失败结束
+prepare_game()
 for i in range(100000):
-    get_screenshot(0)
-    img_rgb = cv2.imread('%s.png' % 0, 0)
-    cv2.imwrite('last.png', img_rgb)
+    #get_screenshot(0)
+    #img_rgb = cv2.imread('%s.png' % 0, 0)
+    #cv2.imwrite('last.png', img_rgb)
     lvye_shenshe()
     beibao()
     suipian_combin()
