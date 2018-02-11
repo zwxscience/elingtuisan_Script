@@ -6,7 +6,7 @@ import time
 #import time
 #import random
 
-# 封印功能，命令的响应速度太慢，只能用来做辅助功能
+# 封印功能，命令的响应速度太慢，只能用来00000做辅助功能
 # 使用的Python库及对应版本：
 # python 3.6
 # opencv-python 3.3.0
@@ -27,7 +27,7 @@ def get_screenshot(id):
 #780 1200 右下角
 #316 1786 冻结
 #536 1786 伤害加成
-#770 1786 回复
+#770 1786 回复 
 def prepare_game():
     cmd = ('adb shell input tap %i %i' % (1066, 798)) #1066 798 功能选择
     os.system(cmd)
@@ -46,10 +46,20 @@ def start_game():
 
 def oneRound(arg,order):
     for i in range(60):
-        if (order == 0):
-            get_minggestone(arg)
+        if (order == 5):
+            get_minggestone_5(arg)
+        elif (order == 4):
+            get_minggestone_4(arg)
+        elif (order == 3):
+            get_minggestone_3(arg)
+        elif (order == 2):
+            get_minggestone_2(arg)
+        elif (order == 1):
+            get_minggestone_1(arg)
+        elif (order == 6):
+            get_minggestone_a(arg)
         else :
-            get_minggestone_re(arg)
+            get_minggestone_b(arg)
     
 def get_minggestone(arg):
     for y in range(100, 500, 100):
@@ -73,15 +83,14 @@ def get_minggestone(arg):
     #print(cmd)
     #time.sleep(0.01)
 
-def get_minggestone_re(arg):
-    for y in range(500, 100, -100):
-        for x in range(750, 350, -134):
-            cmd = ('adb shell input tap %i %i' % (x-67, y-50)) #遍历点击
-            #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
-            os.system(cmd)
-            print(cmd)
-            print('the click thread is:%s\r' %arg)
-            #time.sleep(0.001)
+def get_minggestone_5(arg):
+    for x in range(750, 350, -134):
+        cmd = ('adb shell input tap %i %i' % (x-67, 450)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
     #cmd = ('adb shell input tap %i %i' % (316, 1786)) #316 1786 冻结
     #os.system(cmd)
     #print(cmd)
@@ -93,19 +102,86 @@ def get_minggestone_re(arg):
     #cmd = ('adb shell input tap %i %i' % (770, 1786)) #770 1786 回复
     #os.system(cmd)
     #print(cmd)
-    #time.sleep(0.01)      
+    #time.sleep(0.01)     
+
+def get_minggestone_4(arg):
+    for x in range(750, 350, -134):
+        cmd = ('adb shell input tap %i %i' % (x-67, 350)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
+  
+
+def get_minggestone_3(arg):
+    for x in range(750, 350, -134):
+        cmd = ('adb shell input tap %i %i' % (x-67, 250)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
+  
+
+def get_minggestone_2(arg):
+    xs = [431,515,603,674]
+    for x in range(len(xs)):
+        cmd = ('adb shell input tap %i %i' % (xs[x], 180)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
+ 
+def get_minggestone_1(arg):
+    xs = [431,515,603,674]
+    for x in range(len(xs)):
+        cmd = ('adb shell input tap %i %i' % (xs[x], 100)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
+ 
+def get_minggestone_a(arg):
+    xs = [674,603,515,431]
+    for x in range(len(xs)):
+        cmd = ('adb shell input tap %i %i' % (xs[x], 100)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
+
+def get_minggestone_b(arg):
+    xs = [674,603,515,431]
+    for x in range(len(xs)):
+        cmd = ('adb shell input tap %i %i' % (xs[x], 180)) #遍历点击
+        #cmd = ('adb shell input swipe %i %i %i %i' % (x+50, y+57, x+50, y+57))
+        os.system(cmd)
+        print(cmd)
+        print('the click thread is:%s\r' %arg)
+        #time.sleep(0.001)
 
 prepare_game()   
 start_game() 
 # 循环三次
 
 # 下面是获取分辨率图片及坐标
-#get_screenshot(0)
-#img_rgb = cv2.imread('%s.png' % 0, 0)
-#cv2.imwrite('last.png', img_rgb)
+get_screenshot(0)
+img_rgb = cv2.imread('%s.png' % 0, 0)
+cv2.imwrite('last.png', img_rgb)
 #get_minggestone()
-for th in range(6):
-    t =threading.Thread(target=oneRound,args=(th,th%2))
-    t.start()
-    time.sleep(0.5)
-    
+t =threading.Thread(target=oneRound,args=(0,1))
+t.start()
+t =threading.Thread(target=oneRound,args=(1,2))
+t.start()
+t =threading.Thread(target=oneRound,args=(3,6))
+t.start()
+t =threading.Thread(target=oneRound,args=(4,7))
+t.start()
+t =threading.Thread(target=oneRound,args=(5,1))
+t.start()
+t =threading.Thread(target=oneRound,args=(6,2))
+t.start()
